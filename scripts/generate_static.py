@@ -188,7 +188,10 @@ footer p {
         <h1>Indonesian Stock Market Dashboard</h1>
         <p class="subtitle">Stock data from Jakarta Stock Exchange (IDX)</p>
         <p class="last-update">Last updated: {{ last_update }}</p>
-        <p style="font-size: 0.8rem; color: #ccc; margin-top: 0.5rem;">Note: Data may be delayed by 15-20 minutes. IDX trading hours: Mon-Thu 9:00-15:49, Fri 9:00-15:49 WIB</p>
+        {% if data_quality %}
+        <p style="font-size: 0.8rem; color: #ccc; margin-top: 0.5rem;">Data quality: {{ data_quality.real_data_percentage }}% from live sources ({{ data_quality.real_data_count }}/{{ data_quality.total_stocks }})</p>
+        {% endif %}
+        <p style="font-size: 0.8rem; color: #ccc; margin-top: 0.5rem;">Note: Some data may be estimated due to source limitations. IDX hours: Mon-Thu 9:00-15:49, Fri 9:00-15:49 WIB</p>
     </header>
 
     <main>
@@ -244,16 +247,18 @@ def generate_static_html():
     
     stocks = []
     last_update = "Never"
+    data_quality = None
     
     if os.path.exists(data_file):
         with open(data_file, 'r') as f:
             data = json.load(f)
             stocks = data.get('stocks', [])
             last_update = data.get('last_update', 'Never')
+            data_quality = data.get('data_quality')
     
     # Generate HTML
     template = Template(HTML_TEMPLATE)
-    html_content = template.render(stocks=stocks, last_update=last_update)
+    html_content = template.render(stocks=stocks, last_update=last_update, data_quality=data_quality)
     
     # Save to index.html in root for GitHub Pages
     output_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'index.html')
