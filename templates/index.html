@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indonesian Stock Market Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Indonesian Stock Market Dashboard</h1>
+        <p class="subtitle">Real-time data from Jakarta Stock Exchange (IDX)</p>
+        <p class="last-update">Last updated: {{ last_update }}</p>
+    </header>
+
+    <main>
+        <div class="stock-grid">
+            {% for stock in stocks %}
+            <div class="stock-card {% if stock.change > 0 %}positive{% elif stock.change < 0 %}negative{% endif %}">
+                <div class="stock-header">
+                    <h2>{{ stock.symbol }}</h2>
+                    <p class="company-name">{{ stock.name }}</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp {{ "{:,.0f}".format(stock.price) }}</p>
+                    <p class="price-change">
+                        <span class="change-amount">{{ "{:+,.0f}".format(stock.change) }}</span>
+                        <span class="change-percent">({{ "{:+.2f}".format(stock.changePercent) }}%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">{{ "{:,.0f}".format(stock.volume) }}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">{{ "{:,.0f}".format(stock.dayLow) }} - {{ "{:,.0f}".format(stock.dayHigh) }}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">{{ "{:,.0f}".format(stock.fiftyTwoWeekLow) }} - {{ "{:,.0f}".format(stock.fiftyTwoWeekHigh) }}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp {{ "{:,.0f}".format(stock.marketCap / 1000000000) }}B</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>Data provided by Yahoo Finance | Built with Python & Flask</p>
+        <p>Hosted on GitHub Pages with automated daily updates</p>
+    </footer>
+</body>
+</html>

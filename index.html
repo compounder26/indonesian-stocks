@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indonesian Stock Market Dashboard</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.last-update {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+main {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.placeholder {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.placeholder h2 {
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.placeholder p {
+    color: #666;
+    line-height: 1.8;
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Indonesian Stock Market Dashboard</h1>
+        <p class="subtitle">Real-time data from Jakarta Stock Exchange (IDX)</p>
+        <p class="last-update">Waiting for first data update...</p>
+    </header>
+
+    <main>
+        <div class="placeholder">
+            <h2>Welcome to Indonesian Stock Market Dashboard</h2>
+            <p>This dashboard will automatically display real-time stock data for top Indonesian companies once the GitHub Action runs for the first time.</p>
+            <p>The data will be updated twice daily at 9 AM and 3 PM Jakarta time.</p>
+            <p>Please check back soon!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Data provided by Yahoo Finance | Built with Python & Flask</p>
+        <p>Hosted on GitHub Pages with automated daily updates</p>
+    </footer>
+</body>
+</html>
