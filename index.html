@@ -48,26 +48,100 @@ main {
     max-width: 1400px;
     margin: 2rem auto;
     padding: 0 1rem;
-    text-align: center;
 }
 
-.placeholder {
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.stock-card {
     background: white;
     border-radius: 12px;
-    padding: 3rem;
+    padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin: 2rem auto;
-    max-width: 600px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 4px solid #ddd;
 }
 
-.placeholder h2 {
+.stock-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.stock-card.positive {
+    border-top-color: #10b981;
+}
+
+.stock-card.negative {
+    border-top-color: #ef4444;
+}
+
+.stock-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #1a1a1a;
+    margin-bottom: 0.25rem;
+}
+
+.company-name {
+    color: #666;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
-.placeholder p {
+.price-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.current-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+}
+
+.price-change {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.positive .price-change {
+    color: #10b981;
+}
+
+.negative .price-change {
+    color: #ef4444;
+}
+
+.change-amount {
+    margin-right: 0.5rem;
+}
+
+.stock-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.label {
     color: #666;
-    line-height: 1.8;
+    font-weight: 500;
+}
+
+.value {
+    color: #1a1a1a;
+    font-weight: 600;
 }
 
 footer {
@@ -82,21 +156,717 @@ footer p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
 }
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .stock-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .current-price {
+        font-size: 1.75rem;
+    }
+}
     </style>
 </head>
 <body>
     <header>
         <h1>Indonesian Stock Market Dashboard</h1>
         <p class="subtitle">Real-time data from Jakarta Stock Exchange (IDX)</p>
-        <p class="last-update">Waiting for first data update...</p>
+        <p class="last-update">Last updated: 2025-06-17 16:53:27 WIB</p>
     </header>
 
     <main>
-        <div class="placeholder">
-            <h2>Welcome to Indonesian Stock Market Dashboard</h2>
-            <p>This dashboard will automatically display real-time stock data for top Indonesian companies once the GitHub Action runs for the first time.</p>
-            <p>The data will be updated twice daily at 9 AM and 3 PM Jakarta time.</p>
-            <p>Please check back soon!</p>
+        <div class="stock-grid">
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>BBCA.JK</h2>
+                    <p class="company-name">Bank Central Asia</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>BBRI.JK</h2>
+                    <p class="company-name">Bank Rakyat Indonesia</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>BMRI.JK</h2>
+                    <p class="company-name">Bank Mandiri</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>TLKM.JK</h2>
+                    <p class="company-name">Telkom Indonesia</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>ASII.JK</h2>
+                    <p class="company-name">Astra International</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>UNVR.JK</h2>
+                    <p class="company-name">Unilever Indonesia</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>GGRM.JK</h2>
+                    <p class="company-name">Gudang Garam</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>HMSP.JK</h2>
+                    <p class="company-name">HM Sampoerna</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>ICBP.JK</h2>
+                    <p class="company-name">Indofood CBP</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>INDF.JK</h2>
+                    <p class="company-name">Indofood Sukses Makmur</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>KLBF.JK</h2>
+                    <p class="company-name">Kalbe Farma</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>SMGR.JK</h2>
+                    <p class="company-name">Semen Indonesia</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>UNTR.JK</h2>
+                    <p class="company-name">United Tractors</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>PGAS.JK</h2>
+                    <p class="company-name">Perusahaan Gas Negara</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>JSMR.JK</h2>
+                    <p class="company-name">Jasa Marga</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>BBNI.JK</h2>
+                    <p class="company-name">Bank Negara Indonesia</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>ADRO.JK</h2>
+                    <p class="company-name">Adaro Energy</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>ANTM.JK</h2>
+                    <p class="company-name">Aneka Tambang</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>BRIS.JK</h2>
+                    <p class="company-name">Bank Syariah Indonesia</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-card ">
+                <div class="stock-header">
+                    <h2>TOWR.JK</h2>
+                    <p class="company-name">Sarana Menara Nusantara</p>
+                </div>
+                
+                <div class="price-section">
+                    <p class="current-price">Rp 0</p>
+                    <p class="price-change">
+                        <span class="change-amount">+0</span>
+                        <span class="change-percent">(+0.00%)</span>
+                    </p>
+                </div>
+                
+                <div class="stock-details">
+                    <div class="detail-row">
+                        <span class="label">Volume:</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Day Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">52W Range:</span>
+                        <span class="value">0 - 0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Market Cap:</span>
+                        <span class="value">Rp 0B</span>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </main>
 
