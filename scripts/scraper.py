@@ -123,38 +123,56 @@ def scrape_stocks():
                 try:
                     ticker = yf.Ticker(symbol)
                     
-                    # Try to get historical data first (more reliable)
-                    hist = ticker.history(period="5d")
-                    if not hist.empty:
-                        latest = hist.iloc[-1]
-                        prev = hist.iloc[-2] if len(hist) > 1 else hist.iloc[-1]
-                        
-                        current_price = float(latest['Close'])
-                        previous_close = float(prev['Close'])
-                        change = current_price - previous_close
-                        change_percent = (change / previous_close * 100) if previous_close else 0
-                        
-                        # Try to get additional info
-                        info = ticker.info
-                        
-                        stock_info = {
-                            'symbol': symbol,
-                            'name': name,
-                            'price': round(current_price, 2),
-                            'change': round(change, 2),
-                            'changePercent': round(change_percent, 2),
-                            'volume': int(latest['Volume']),
-                            'marketCap': info.get('marketCap', 0),
-                            'dayHigh': round(float(latest['High']), 2),
-                            'dayLow': round(float(latest['Low']), 2),
-                            'fiftyTwoWeekHigh': round(info.get('fiftyTwoWeekHigh', float(hist['High'].max())), 2),
-                            'fiftyTwoWeekLow': round(info.get('fiftyTwoWeekLow', float(hist['Low'].min())), 2)
-                        }
-                        
-                        stock_data.append(stock_info)
-                        print(f"Scraped data for {name} ({symbol})")
-                    else:
-                        raise Exception("No historical data available")
+                    # First try to get real-time data from info
+                    info = ticker.info
+                    
+                    # Get current/last price - try multiple fields
+                    current_price = info.get('currentPrice') or info.get('regularMarketPrice') or info.get('lastPrice', 0)
+                    previous_close = info.get('regularMarketPreviousClose') or info.get('previousClose', 0)
+                    
+                    # If we still don't have current price, try history
+                    if current_price == 0:
+                        hist = ticker.history(period="1d", interval="1m")
+                        if not hist.empty:
+                            current_price = float(hist['Close'].iloc[-1])
+                        else:
+                            # Fallback to daily history
+                            hist_daily = ticker.history(period="5d")
+                            if not hist_daily.empty:
+                                current_price = float(hist_daily['Close'].iloc[-1])
+                    
+                    # Calculate change
+                    change = current_price - previous_close if current_price and previous_close else 0
+                    change_percent = (change / previous_close * 100) if previous_close else 0
+                    
+                    # Get volume and high/low from info first, then history
+                    volume = info.get('regularMarketVolume') or info.get('volume', 0)
+                    day_high = info.get('regularMarketDayHigh') or info.get('dayHigh', 0)
+                    day_low = info.get('regularMarketDayLow') or info.get('dayLow', 0)
+                    
+                    # If high/low not in info, get from today's history
+                    if (day_high == 0 or day_low == 0) and 'hist' in locals() and not hist.empty:
+                        day_high = float(hist['High'].max())
+                        day_low = float(hist['Low'].min())
+                        volume = int(hist['Volume'].sum()) if volume == 0 else volume
+                    
+                    stock_info = {
+                        'symbol': symbol,
+                        'name': name,
+                        'price': round(current_price, 2) if current_price else 0,
+                        'change': round(change, 2),
+                        'changePercent': round(change_percent, 2),
+                        'volume': int(volume),
+                        'marketCap': info.get('marketCap', 0),
+                        'dayHigh': round(day_high, 2) if day_high else 0,
+                        'dayLow': round(day_low, 2) if day_low else 0,
+                        'fiftyTwoWeekHigh': round(info.get('fiftyTwoWeekHigh', 0), 2),
+                        'fiftyTwoWeekLow': round(info.get('fiftyTwoWeekLow', 0), 2),
+                        'lastUpdate': info.get('regularMarketTime', 'N/A')
+                    }
+                    
+                    stock_data.append(stock_info)
+                    print(f"Scraped data for {name} ({symbol}) - Price: {current_price}")
                     
                     # Longer delay between requests
                     time.sleep(1)

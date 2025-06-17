@@ -186,8 +186,9 @@ footer p {
 <body>
     <header>
         <h1>Indonesian Stock Market Dashboard</h1>
-        <p class="subtitle">Real-time data from Jakarta Stock Exchange (IDX)</p>
+        <p class="subtitle">Stock data from Jakarta Stock Exchange (IDX)</p>
         <p class="last-update">Last updated: {{ last_update }}</p>
+        <p style="font-size: 0.8rem; color: #ccc; margin-top: 0.5rem;">Note: Data may be delayed by 15-20 minutes. IDX trading hours: Mon-Thu 9:00-15:49, Fri 9:00-15:49 WIB</p>
     </header>
 
     <main>
