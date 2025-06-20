@@ -1,0 +1,226 @@
+{
+  "stocks": [
+    {
+      "symbol": "BBCA.JK",
+      "name": "Bank Central Asia",
+      "price": 1671.86,
+      "change": 38.2,
+      "changePercent": 2.34,
+      "volume": 89402783,
+      "marketCap": 292214585223271,
+      "pe": 30.74,
+      "sector": "Financials"
+    },
+    {
+      "symbol": "BBRI.JK",
+      "name": "Bank Rakyat Indonesia",
+      "price": 5661.93,
+      "change": 50.31,
+      "changePercent": 0.9,
+      "volume": 85112321,
+      "marketCap": 72728960237386,
+      "pe": null,
+      "sector": "Financials"
+    },
+    {
+      "symbol": "BMRI.JK",
+      "name": "Bank Mandiri",
+      "price": 22019.19,
+      "change": 563.37,
+      "changePercent": 2.63,
+      "volume": 89982176,
+      "marketCap": 358391878312123,
+      "pe": 15.91,
+      "sector": "Financials"
+    },
+    {
+      "symbol": "TLKM.JK",
+      "name": "Telkom Indonesia",
+      "price": 21164.23,
+      "change": -613.33,
+      "changePercent": -2.82,
+      "volume": 52872457,
+      "marketCap": 124490643433242,
+      "pe": 7.0,
+      "sector": "Communication Services"
+    },
+    {
+      "symbol": "ASII.JK",
+      "name": "Astra International",
+      "price": 22820.57,
+      "change": -361.22,
+      "changePercent": -1.56,
+      "volume": 80068248,
+      "marketCap": 17776843892219,
+      "pe": 33.25,
+      "sector": "Consumer Discretionary"
+    },
+    {
+      "symbol": "UNVR.JK",
+      "name": "Unilever Indonesia",
+      "price": 10079.98,
+      "change": -93.87,
+      "changePercent": -0.92,
+      "volume": 86141482,
+      "marketCap": 163775961298596,
+      "pe": 9.27,
+      "sector": "Consumer Staples"
+    },
+    {
+      "symbol": "GGRM.JK",
+      "name": "Gudang Garam",
+      "price": 1270.42,
+      "change": -9.81,
+      "changePercent": -0.77,
+      "volume": 85792412,
+      "marketCap": 103620586018179,
+      "pe": 16.36,
+      "sector": "Consumer Staples"
+    },
+    {
+      "symbol": "HMSP.JK",
+      "name": "HM Sampoerna",
+      "price": 14898.71,
+      "change": 131.19,
+      "changePercent": 0.89,
+      "volume": 90368870,
+      "marketCap": 55542363932340,
+      "pe": 26.38,
+      "sector": "Consumer Staples"
+    },
+    {
+      "symbol": "ICBP.JK",
+      "name": "Indofood CBP",
+      "price": 9102.84,
+      "change": 181.97,
+      "changePercent": 2.04,
+      "volume": 31832853,
+      "marketCap": 141805856149088,
+      "pe": 29.95,
+      "sector": "Consumer Staples"
+    },
+    {
+      "symbol": "INDF.JK",
+      "name": "Indofood Sukses Makmur",
+      "price": 15169.05,
+      "change": -189.5,
+      "changePercent": -1.23,
+      "volume": 40788340,
+      "marketCap": 260595673086051,
+      "pe": 21.82,
+      "sector": "Consumer Staples"
+    },
+    {
+      "symbol": "KLBF.JK",
+      "name": "Kalbe Farma",
+      "price": 9861.95,
+      "change": 159.27,
+      "changePercent": 1.64,
+      "volume": 52144420,
+      "marketCap": 348736879912559,
+      "pe": 23.64,
+      "sector": "Health Care"
+    },
+    {
+      "symbol": "SMGR.JK",
+      "name": "Semen Indonesia",
+      "price": 1903.38,
+      "change": 6.91,
+      "changePercent": 0.36,
+      "volume": 95918972,
+      "marketCap": 201944658224746,
+      "pe": null,
+      "sector": "Materials"
+    },
+    {
+      "symbol": "UNTR.JK",
+      "name": "United Tractors",
+      "price": 13143.24,
+      "change": 306.97,
+      "changePercent": 2.39,
+      "volume": 2213333,
+      "marketCap": 334436969830317,
+      "pe": null,
+      "sector": "Energy"
+    },
+    {
+      "symbol": "PGAS.JK",
+      "name": "Perusahaan Gas Negara",
+      "price": 14468.35,
+      "change": -355.86,
+      "changePercent": -2.4,
+      "volume": 87027586,
+      "marketCap": 195429125653966,
+      "pe": 13.15,
+      "sector": "Utilities"
+    },
+    {
+      "symbol": "JSMR.JK",
+      "name": "Jasa Marga",
+      "price": 1951.6,
+      "change": 55.98,
+      "changePercent": 2.95,
+      "volume": 52211867,
+      "marketCap": 203891566749259,
+      "pe": 7.98,
+      "sector": "Industrials"
+    },
+    {
+      "symbol": "BBNI.JK",
+      "name": "Bank Negara Indonesia",
+      "price": 8720.65,
+      "change": 36.82,
+      "changePercent": 0.42,
+      "volume": 69363525,
+      "marketCap": 368188694243506,
+      "pe": 9.52,
+      "sector": "Financials"
+    },
+    {
+      "symbol": "ADRO.JK",
+      "name": "Adaro Energy",
+      "price": 15824.26,
+      "change": -86.13,
+      "changePercent": -0.54,
+      "volume": 43062370,
+      "marketCap": 220053464123086,
+      "pe": 22.48,
+      "sector": "Energy"
+    },
+    {
+      "symbol": "ANTM.JK",
+      "name": "Aneka Tambang",
+      "price": 7433.26,
+      "change": 40.52,
+      "changePercent": 0.55,
+      "volume": 87250237,
+      "marketCap": 470264861449381,
+      "pe": null,
+      "sector": "Materials"
+    },
+    {
+      "symbol": "BRIS.JK",
+      "name": "Bank Syariah Indonesia",
+      "price": 19938.84,
+      "change": 275.64,
+      "changePercent": 1.4,
+      "volume": 6920875,
+      "marketCap": 113220779932303,
+      "pe": 19.45,
+      "sector": "Financials"
+    },
+    {
+      "symbol": "TOWR.JK",
+      "name": "Sarana Menara Nusantara",
+      "price": 11231.34,
+      "change": -82.25,
+      "changePercent": -0.73,
+      "volume": 48550365,
+      "marketCap": 57508913193134,
+      "pe": null,
+      "sector": "Communication Services"
+    }
+  ],
+  "last_update": "2025-06-20 13:10:40 WIB",
+  "total_stocks": 20
+}

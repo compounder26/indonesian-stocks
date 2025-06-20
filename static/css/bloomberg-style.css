@@ -1,0 +1,756 @@
+/* Bloomberg Terminal Style CSS */
+
+:root {
+    /* Bloomberg-inspired color palette */
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #141414;
+    --bg-hover: #1a1a1a;
+    --bg-selected: #252525;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-muted: #808080;
+    
+    --accent-orange: #ff6600;
+    --accent-blue: #0088ff;
+    --positive: #00ff41;
+    --negative: #ff3333;
+    --warning: #ffaa00;
+    
+    --border-color: #333333;
+    --border-light: #252525;
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', 'Consolas', monospace;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 12px;
+    line-height: 1.4;
+    overflow: hidden;
+}
+
+/* Top Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 var(--spacing-md);
+    height: 48px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--accent-orange);
+}
+
+.logo-sub {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.nav-tabs {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.nav-tab {
+    background: none;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-tab:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-hover);
+}
+
+.nav-tab.active {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    background-color: var(--bg-tertiary);
+}
+
+/* Search Container */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    width: 300px;
+}
+
+.search-container i {
+    color: var(--text-muted);
+    margin-right: var(--spacing-sm);
+}
+
+#stockSearch {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    outline: none;
+    flex: 1;
+    font-family: inherit;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+}
+
+.search-result-item {
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-result-item:hover {
+    background-color: var(--bg-hover);
+}
+
+/* Market Status */
+.market-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--negative);
+}
+
+.status-indicator.open {
+    background-color: var(--positive);
+}
+
+/* Main Container Layout */
+.main-container {
+    display: flex;
+    height: calc(100vh - 48px);
+}
+
+/* Sidebars */
+.left-sidebar,
+.right-sidebar {
+    width: 280px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    padding: var(--spacing-md);
+}
+
+.right-sidebar {
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+    width: 240px;
+}
+
+.sidebar-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.sidebar-section h3 {
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: normal;
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid var(--border-light);
+    letter-spacing: 1px;
+}
+
+/* Index Items */
+.index-item {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.index-name {
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.index-value {
+    font-size: 16px;
+    font-weight: bold;
+    margin: var(--spacing-xs) 0;
+}
+
+.index-change {
+    font-size: 11px;
+}
+
+.positive {
+    color: var(--positive);
+}
+
+.negative {
+    color: var(--negative);
+}
+
+/* Sector List */
+.sector-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.sector-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sector-item:hover {
+    background-color: var(--bg-hover);
+}
+
+/* Market Movers */
+.movers-tabs {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.mover-tab {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    cursor: pointer;
+    font-size: 10px;
+    transition: all 0.2s;
+    flex: 1;
+}
+
+.mover-tab.active {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--accent-orange);
+}
+
+.movers-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.mover-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs);
+    font-size: 11px;
+}
+
+/* Center Content */
+.center-content {
+    flex: 1;
+    background-color: var(--bg-primary);
+    overflow-y: auto;
+    padding: var(--spacing-md);
+}
+
+.view-container {
+    display: none;
+}
+
+.view-container.active {
+    display: block;
+}
+
+/* Data Grid */
+.data-grid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.data-grid-header h2 {
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.grid-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.grid-btn {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) var(--spacing-md);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.grid-btn:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.grid-select {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-family: inherit;
+    font-size: 11px;
+}
+
+/* Data Table */
+.data-grid {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    overflow-x: auto;
+}
+
+#stocksTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#stocksTable th {
+    background-color: var(--bg-tertiary);
+    padding: var(--spacing-sm);
+    text-align: left;
+    font-weight: normal;
+    color: var(--text-secondary);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    user-select: none;
+}
+
+#stocksTable th.numeric {
+    text-align: right;
+}
+
+#stocksTable th:hover {
+    background-color: var(--bg-hover);
+}
+
+#stocksTable td {
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-light);
+    font-size: 12px;
+}
+
+#stocksTable td.numeric {
+    text-align: right;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+#stocksTable tbody tr:hover {
+    background-color: var(--bg-hover);
+}
+
+.stock-symbol {
+    color: var(--accent-blue);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.stock-symbol:hover {
+    text-decoration: underline;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.action-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 2px 6px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+/* Screener View */
+.screener-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.btn-primary {
+    background-color: var(--accent-orange);
+    border: none;
+    color: var(--text-primary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #ff8833;
+}
+
+.screener-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.filter-section {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+}
+
+.filter-section h3 {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.filter-row label {
+    flex: 1;
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.filter-row input[type="number"] {
+    width: 80px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: var(--spacing-xs);
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.sector-filters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xs);
+}
+
+.sector-filter-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.sector-filter-item input[type="checkbox"] {
+    accent-color: var(--accent-orange);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--bg-secondary);
+    margin: 5% auto;
+    width: 80%;
+    max-width: 1000px;
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+.detail-tabs {
+    display: flex;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-tab {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.detail-tab.active {
+    background-color: var(--bg-tertiary);
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.detail-content {
+    padding: var(--spacing-lg);
+    min-height: 400px;
+}
+
+/* Market Stats */
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+    font-size: 11px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-weight: bold;
+}
+
+/* Quality Meter */
+.quality-meter {
+    width: 100%;
+    height: 20px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.quality-bar {
+    height: 100%;
+    background-color: var(--accent-orange);
+    transition: width 0.3s;
+}
+
+.quality-text {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.update-time {
+    margin-top: var(--spacing-sm);
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+/* Quick Links */
+.quick-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 0;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 11px;
+    transition: color 0.2s;
+}
+
+.quick-link:hover {
+    color: var(--text-primary);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--accent-orange);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    margin-top: var(--spacing-md);
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 400px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+}
+
+/* Metric Cards */
+.metric-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.metric-card {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.metric-value {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: var(--spacing-xs);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .left-sidebar,
+    .right-sidebar {
+        display: none;
+    }
+    
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .center-content {
+        width: 100%;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}

@@ -1,0 +1,428 @@
+{
+  "symbol": "INDF.JK",
+  "basic": {
+    "name": "Indofood Sukses Makmur",
+    "price": 15169.05,
+    "previousClose": 15358.54,
+    "dayChange": -189.5,
+    "dayChangePercent": -1.23,
+    "volume": 40788340,
+    "avgVolume": 10896942,
+    "dayHigh": 15389.96,
+    "dayLow": 14933.19,
+    "fiftyTwoWeekHigh": 17670.6,
+    "fiftyTwoWeekLow": 10501.71,
+    "marketCap": 260595673086051,
+    "sharesOutstanding": 37610157229,
+    "float": 19748171696,
+    "beta": 0.56,
+    "currency": "IDR"
+  },
+  "fundamentals": {
+    "pe": 21.82,
+    "forwardPE": 17.06,
+    "peg": 1.21,
+    "pb": 1.89,
+    "ps": 5.16,
+    "eps": 1716.93,
+    "forwardEps": 1492.93,
+    "dividendYield": 2.23,
+    "dividendRate": 424.01,
+    "payoutRatio": 0.32,
+    "roe": 0.1737,
+    "roa": 0.1447,
+    "grossMargin": null,
+    "operatingMargin": 0.17,
+    "profitMargin": 0.1174,
+    "debtToEquity": null,
+    "currentRatio": 2.53,
+    "quickRatio": 1.28,
+    "bookValue": 3121.52,
+    "revenuePerShare": 9509.01,
+    "totalCashPerShare": 399.2,
+    "enterpriseValue": 176416805191757,
+    "evToRevenue": 8.2,
+    "evToEbitda": 9.65
+  },
+  "technicals": {
+    "ma_20": 11549.35,
+    "ma_50": 11658.7,
+    "ma_200": 13652.57,
+    "rsi_14": 35.18,
+    "perf_1d": 0.46,
+    "perf_1w": 2.42,
+    "perf_1m": -1.46,
+    "perf_3m": 27.33,
+    "perf_ytd": 19.88
+  },
+  "company": {
+    "sector": "Consumer Staples",
+    "industry": "Consumer Staples Industry",
+    "fullTimeEmployees": null,
+    "website": "https://www.indf.co.id",
+    "description": "Indofood Sukses Makmur is a leading company in the Consumer Staples sector in Indonesia.",
+    "country": "Indonesia",
+    "city": "Jakarta",
+    "address": "79 Jl. Sudirman"
+  },
+  "financials": {
+    "revenue": 42458608210590,
+    "netIncome": 1720251633144,
+    "totalAssets": 126479845210646,
+    "totalLiabilities": 204421590714587,
+    "totalEquity": 148589283276776,
+    "operatingCashFlow": 31011721271991,
+    "freeCashFlow": null
+  },
+  "historical": {
+    "daily": [
+      {
+        "Date": "2025-05-22",
+        "Open": 11107.58,
+        "High": 11387.62,
+        "Low": 11044.4,
+        "Close": 11221.17,
+        "Volume": 33808781
+      },
+      {
+        "Date": "2025-05-23",
+        "Open": 11177.7,
+        "High": 11393.83,
+        "Low": 11172.72,
+        "Close": 11293.23,
+        "Volume": 2346089
+      },
+      {
+        "Date": "2025-05-24",
+        "Open": 11495.67,
+        "High": 11645.17,
+        "Low": 11168.28,
+        "Close": 11365.9,
+        "Volume": 15035590
+      },
+      {
+        "Date": "2025-05-25",
+        "Open": 11204.85,
+        "High": 11314.66,
+        "Low": 10838.03,
+        "Close": 11054.43,
+        "Volume": 31624079
+      },
+      {
+        "Date": "2025-05-26",
+        "Open": 11277.12,
+        "High": 11430.88,
+        "Low": 11226.87,
+        "Close": 11245.76,
+        "Volume": 44690783
+      },
+      {
+        "Date": "2025-05-27",
+        "Open": 11357.04,
+        "High": 11513.39,
+        "Low": 11140.1,
+        "Close": 11495.17,
+        "Volume": 14123650
+      },
+      {
+        "Date": "2025-05-28",
+        "Open": 11657.56,
+        "High": 11854.29,
+        "Low": 11549.16,
+        "Close": 11792.83,
+        "Volume": 45139836
+      },
+      {
+        "Date": "2025-05-29",
+        "Open": 11921.72,
+        "High": 12140.01,
+        "Low": 11732.98,
+        "Close": 12042.37,
+        "Volume": 1895823
+      },
+      {
+        "Date": "2025-05-30",
+        "Open": 11984.19,
+        "High": 12046.93,
+        "Low": 11683.45,
+        "Close": 11768.58,
+        "Volume": 13322332
+      },
+      {
+        "Date": "2025-05-31",
+        "Open": 11985.41,
+        "High": 12110.12,
+        "Low": 11695.54,
+        "Close": 11753.37,
+        "Volume": 11292900
+      },
+      {
+        "Date": "2025-06-01",
+        "Open": 11558.76,
+        "High": 11848.12,
+        "Low": 11341.14,
+        "Close": 11739.54,
+        "Volume": 33267149
+      },
+      {
+        "Date": "2025-06-02",
+        "Open": 11380.16,
+        "High": 11466.67,
+        "Low": 11190.38,
+        "Close": 11461.66,
+        "Volume": 3481331
+      },
+      {
+        "Date": "2025-06-03",
+        "Open": 11861.31,
+        "High": 12056.07,
+        "Low": 11685.3,
+        "Close": 11719.87,
+        "Volume": 12388241
+      },
+      {
+        "Date": "2025-06-04",
+        "Open": 11667.21,
+        "High": 11846.0,
+        "Low": 11641.6,
+        "Close": 11835.03,
+        "Volume": 23965472
+      },
+      {
+        "Date": "2025-06-05",
+        "Open": 11939.67,
+        "High": 12101.57,
+        "Low": 11664.06,
+        "Close": 11871.71,
+        "Volume": 23410066
+      },
+      {
+        "Date": "2025-06-06",
+        "Open": 11538.92,
+        "High": 11764.57,
+        "Low": 11430.21,
+        "Close": 11516.18,
+        "Volume": 36972474
+      },
+      {
+        "Date": "2025-06-07",
+        "Open": 11486.08,
+        "High": 11732.41,
+        "Low": 11375.65,
+        "Close": 11506.86,
+        "Volume": 3813305
+      },
+      {
+        "Date": "2025-06-08",
+        "Open": 11625.71,
+        "High": 11626.63,
+        "Low": 11513.43,
+        "Close": 11538.64,
+        "Volume": 30870906
+      },
+      {
+        "Date": "2025-06-09",
+        "Open": 11411.23,
+        "High": 11509.14,
+        "Low": 11173.85,
+        "Close": 11364.92,
+        "Volume": 45717813
+      },
+      {
+        "Date": "2025-06-10",
+        "Open": 11854.16,
+        "High": 12056.35,
+        "Low": 11626.24,
+        "Close": 11665.68,
+        "Volume": 26663205
+      },
+      {
+        "Date": "2025-06-11",
+        "Open": 11722.05,
+        "High": 11765.26,
+        "Low": 11628.84,
+        "Close": 11693.62,
+        "Volume": 7369867
+      },
+      {
+        "Date": "2025-06-12",
+        "Open": 11491.78,
+        "High": 11678.96,
+        "Low": 11362.05,
+        "Close": 11437.99,
+        "Volume": 7759636
+      },
+      {
+        "Date": "2025-06-13",
+        "Open": 11443.56,
+        "High": 11773.61,
+        "Low": 11432.25,
+        "Close": 11600.47,
+        "Volume": 28758620
+      },
+      {
+        "Date": "2025-06-14",
+        "Open": 11384.2,
+        "High": 11679.08,
+        "Low": 11358.23,
+        "Close": 11528.94,
+        "Volume": 2335954
+      },
+      {
+        "Date": "2025-06-15",
+        "Open": 11044.41,
+        "High": 11278.61,
+        "Low": 10889.55,
+        "Close": 11234.47,
+        "Volume": 30440475
+      },
+      {
+        "Date": "2025-06-16",
+        "Open": 11296.78,
+        "High": 11463.77,
+        "Low": 11228.73,
+        "Close": 11322.58,
+        "Volume": 39019460
+      },
+      {
+        "Date": "2025-06-17",
+        "Open": 11646.65,
+        "High": 11868.24,
+        "Low": 11453.16,
+        "Close": 11475.89,
+        "Volume": 22338584
+      },
+      {
+        "Date": "2025-06-18",
+        "Open": 11141.64,
+        "High": 11437.56,
+        "Low": 10922.18,
+        "Close": 11331.78,
+        "Volume": 22762991
+      },
+      {
+        "Date": "2025-06-19",
+        "Open": 11760.76,
+        "High": 11963.61,
+        "Low": 11453.18,
+        "Close": 11544.17,
+        "Volume": 5197308
+      },
+      {
+        "Date": "2025-06-20",
+        "Open": 11511.76,
+        "High": 11644.79,
+        "Low": 11422.33,
+        "Close": 11596.97,
+        "Volume": 17632972
+      }
+    ],
+    "monthly": [
+      {
+        "Date": "2024-06-21",
+        "Open": 14001.9,
+        "High": 14158.68,
+        "Low": 13769.32,
+        "Close": 13888.28,
+        "Volume": 11733293
+      },
+      {
+        "Date": "2024-07-21",
+        "Open": 13534.37,
+        "High": 13736.6,
+        "Low": 13170.2,
+        "Close": 13274.3,
+        "Volume": 39668155
+      },
+      {
+        "Date": "2024-08-20",
+        "Open": 13324.19,
+        "High": 13615.31,
+        "Low": 13269.53,
+        "Close": 13449.67,
+        "Volume": 14241119
+      },
+      {
+        "Date": "2024-09-19",
+        "Open": 14210.54,
+        "High": 14340.69,
+        "Low": 13907.87,
+        "Close": 13949.75,
+        "Volume": 17924032
+      },
+      {
+        "Date": "2024-10-19",
+        "Open": 14018.34,
+        "High": 14252.46,
+        "Low": 13907.48,
+        "Close": 13959.33,
+        "Volume": 7242805
+      },
+      {
+        "Date": "2024-11-18",
+        "Open": 13366.87,
+        "High": 13461.18,
+        "Low": 13260.55,
+        "Close": 13349.6,
+        "Volume": 10959871
+      },
+      {
+        "Date": "2024-12-18",
+        "Open": 16423.48,
+        "High": 16701.6,
+        "Low": 16277.9,
+        "Close": 16285.41,
+        "Volume": 14390777
+      },
+      {
+        "Date": "2025-01-17",
+        "Open": 13320.96,
+        "High": 13664.08,
+        "Low": 13112.39,
+        "Close": 13401.68,
+        "Volume": 39680735
+      },
+      {
+        "Date": "2025-02-16",
+        "Open": 14947.24,
+        "High": 15077.47,
+        "Low": 14789.33,
+        "Close": 14799.94,
+        "Volume": 47719002
+      },
+      {
+        "Date": "2025-03-18",
+        "Open": 14788.61,
+        "High": 15143.81,
+        "Low": 14754.5,
+        "Close": 14854.74,
+        "Volume": 37663962
+      },
+      {
+        "Date": "2025-04-17",
+        "Open": 12602.15,
+        "High": 12796.87,
+        "Low": 12425.86,
+        "Close": 12794.9,
+        "Volume": 44753410
+      },
+      {
+        "Date": "2025-05-17",
+        "Open": 11707.37,
+        "High": 11885.14,
+        "Low": 11549.0,
+        "Close": 11776.61,
+        "Volume": 11839050
+      },
+      {
+        "Date": "2025-06-16",
+        "Open": 11296.78,
+        "High": 11463.77,
+        "Low": 11228.73,
+        "Close": 11322.58,
+        "Volume": 39019460
+      }
+    ]
+  },
+  "lastUpdate": "2025-06-20 13:10:40 WIB"
+}

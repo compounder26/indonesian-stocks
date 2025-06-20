@@ -1,0 +1,428 @@
+{
+  "symbol": "TOWR.JK",
+  "basic": {
+    "name": "Sarana Menara Nusantara",
+    "price": 11231.34,
+    "previousClose": 11313.59,
+    "dayChange": -82.25,
+    "dayChangePercent": -0.73,
+    "volume": 48550365,
+    "avgVolume": 16531183,
+    "dayHigh": 11316.5,
+    "dayLow": 11100.14,
+    "fiftyTwoWeekHigh": 13147.07,
+    "fiftyTwoWeekLow": 7439.7,
+    "marketCap": 57508913193134,
+    "sharesOutstanding": 37632534638,
+    "float": 24999417987,
+    "beta": 1.44,
+    "currency": "IDR"
+  },
+  "fundamentals": {
+    "pe": null,
+    "forwardPE": 16.56,
+    "peg": null,
+    "pb": 3.46,
+    "ps": 8.26,
+    "eps": 1208.35,
+    "forwardEps": 1396.02,
+    "dividendYield": 4.95,
+    "dividendRate": 322.36,
+    "payoutRatio": null,
+    "roe": 0.2959,
+    "roa": 0.0997,
+    "grossMargin": 0.5446,
+    "operatingMargin": null,
+    "profitMargin": 0.0463,
+    "debtToEquity": 1.5,
+    "currentRatio": 0.87,
+    "quickRatio": null,
+    "bookValue": 3246.87,
+    "revenuePerShare": null,
+    "totalCashPerShare": 1903.35,
+    "enterpriseValue": null,
+    "evToRevenue": null,
+    "evToEbitda": 8.88
+  },
+  "technicals": {
+    "ma_20": 8260.76,
+    "ma_50": 8437.25,
+    "ma_200": 9454.55,
+    "rsi_14": 47.86,
+    "perf_1d": -2.68,
+    "perf_1w": -1.65,
+    "perf_1m": -12.66,
+    "perf_3m": 25.97,
+    "perf_ytd": -4.35
+  },
+  "company": {
+    "sector": "Communication Services",
+    "industry": "Communication Services Industry",
+    "fullTimeEmployees": 29467,
+    "website": "https://www.towr.co.id",
+    "description": "Sarana Menara Nusantara is a leading company in the Communication Services sector in Indonesia.",
+    "country": "Indonesia",
+    "city": "Jakarta",
+    "address": "68 Jl. Sudirman"
+  },
+  "financials": {
+    "revenue": 73296520025170,
+    "netIncome": 301650705577,
+    "totalAssets": 322144170852171,
+    "totalLiabilities": 114473708772391,
+    "totalEquity": 125123694532206,
+    "operatingCashFlow": 16240406372020,
+    "freeCashFlow": 10583804050439
+  },
+  "historical": {
+    "daily": [
+      {
+        "Date": "2025-05-22",
+        "Open": 8488.49,
+        "High": 8768.05,
+        "Low": 8355.65,
+        "Close": 8610.8,
+        "Volume": 26969682
+      },
+      {
+        "Date": "2025-05-23",
+        "Open": 8618.68,
+        "High": 8749.02,
+        "Low": 8413.35,
+        "Close": 8565.26,
+        "Volume": 44399481
+      },
+      {
+        "Date": "2025-05-24",
+        "Open": 8865.51,
+        "High": 8980.45,
+        "Low": 8691.96,
+        "Close": 8742.01,
+        "Volume": 33856423
+      },
+      {
+        "Date": "2025-05-25",
+        "Open": 8739.78,
+        "High": 8863.98,
+        "Low": 8598.66,
+        "Close": 8761.96,
+        "Volume": 24953478
+      },
+      {
+        "Date": "2025-05-26",
+        "Open": 9020.15,
+        "High": 9132.67,
+        "Low": 8679.77,
+        "Close": 8849.22,
+        "Volume": 17662728
+      },
+      {
+        "Date": "2025-05-27",
+        "Open": 9129.86,
+        "High": 9198.8,
+        "Low": 9053.62,
+        "Close": 9091.54,
+        "Volume": 48738035
+      },
+      {
+        "Date": "2025-05-28",
+        "Open": 8839.47,
+        "High": 9142.69,
+        "Low": 8813.82,
+        "Close": 8982.4,
+        "Volume": 28141474
+      },
+      {
+        "Date": "2025-05-29",
+        "Open": 9213.83,
+        "High": 9317.88,
+        "Low": 9057.88,
+        "Close": 9078.29,
+        "Volume": 47052012
+      },
+      {
+        "Date": "2025-05-30",
+        "Open": 9086.01,
+        "High": 9252.76,
+        "Low": 8816.92,
+        "Close": 8974.06,
+        "Volume": 27427006
+      },
+      {
+        "Date": "2025-05-31",
+        "Open": 8895.61,
+        "High": 9031.1,
+        "Low": 8675.27,
+        "Close": 8766.0,
+        "Volume": 23149894
+      },
+      {
+        "Date": "2025-06-01",
+        "Open": 8571.15,
+        "High": 8705.06,
+        "Low": 8499.01,
+        "Close": 8663.1,
+        "Volume": 11650222
+      },
+      {
+        "Date": "2025-06-02",
+        "Open": 8651.76,
+        "High": 8842.57,
+        "Low": 8518.86,
+        "Close": 8778.76,
+        "Volume": 46898094
+      },
+      {
+        "Date": "2025-06-03",
+        "Open": 8587.77,
+        "High": 8784.78,
+        "Low": 8441.63,
+        "Close": 8618.35,
+        "Volume": 26543547
+      },
+      {
+        "Date": "2025-06-04",
+        "Open": 8659.46,
+        "High": 8680.06,
+        "Low": 8376.56,
+        "Close": 8533.53,
+        "Volume": 37657214
+      },
+      {
+        "Date": "2025-06-05",
+        "Open": 8493.48,
+        "High": 8630.24,
+        "Low": 8376.44,
+        "Close": 8379.2,
+        "Volume": 44780150
+      },
+      {
+        "Date": "2025-06-06",
+        "Open": 8475.61,
+        "High": 8671.15,
+        "Low": 8307.59,
+        "Close": 8547.64,
+        "Volume": 30729317
+      },
+      {
+        "Date": "2025-06-07",
+        "Open": 8412.99,
+        "High": 8447.86,
+        "Low": 8282.98,
+        "Close": 8400.93,
+        "Volume": 12555799
+      },
+      {
+        "Date": "2025-06-08",
+        "Open": 8059.73,
+        "High": 8279.68,
+        "Low": 8001.99,
+        "Close": 8181.4,
+        "Volume": 17833839
+      },
+      {
+        "Date": "2025-06-09",
+        "Open": 8510.88,
+        "High": 8613.56,
+        "Low": 8346.24,
+        "Close": 8419.49,
+        "Volume": 44523802
+      },
+      {
+        "Date": "2025-06-10",
+        "Open": 8578.72,
+        "High": 8602.79,
+        "Low": 8389.23,
+        "Close": 8478.83,
+        "Volume": 38754305
+      },
+      {
+        "Date": "2025-06-11",
+        "Open": 8412.57,
+        "High": 8471.28,
+        "Low": 8267.78,
+        "Close": 8298.99,
+        "Volume": 45760314
+      },
+      {
+        "Date": "2025-06-12",
+        "Open": 8107.76,
+        "High": 8239.5,
+        "Low": 7949.47,
+        "Close": 8188.92,
+        "Volume": 41689035
+      },
+      {
+        "Date": "2025-06-13",
+        "Open": 8001.76,
+        "High": 8106.45,
+        "Low": 7859.72,
+        "Close": 7991.75,
+        "Volume": 43911087
+      },
+      {
+        "Date": "2025-06-14",
+        "Open": 7974.31,
+        "High": 8104.96,
+        "Low": 7919.57,
+        "Close": 8078.96,
+        "Volume": 30603237
+      },
+      {
+        "Date": "2025-06-15",
+        "Open": 8075.43,
+        "High": 8087.34,
+        "Low": 8029.25,
+        "Close": 8077.99,
+        "Volume": 38902028
+      },
+      {
+        "Date": "2025-06-16",
+        "Open": 7917.43,
+        "High": 8019.39,
+        "Low": 7789.89,
+        "Close": 7969.87,
+        "Volume": 19073184
+      },
+      {
+        "Date": "2025-06-17",
+        "Open": 7720.77,
+        "High": 7974.36,
+        "Low": 7636.48,
+        "Close": 7831.26,
+        "Volume": 24990854
+      },
+      {
+        "Date": "2025-06-18",
+        "Open": 7845.12,
+        "High": 7921.81,
+        "Low": 7798.28,
+        "Close": 7884.04,
+        "Volume": 49317424
+      },
+      {
+        "Date": "2025-06-19",
+        "Open": 8185.56,
+        "High": 8238.67,
+        "Low": 7960.66,
+        "Close": 8053.97,
+        "Volume": 1962903
+      },
+      {
+        "Date": "2025-06-20",
+        "Open": 7740.22,
+        "High": 7859.48,
+        "Low": 7611.91,
+        "Close": 7838.14,
+        "Volume": 33446488
+      }
+    ],
+    "monthly": [
+      {
+        "Date": "2024-06-21",
+        "Open": 11798.86,
+        "High": 11921.72,
+        "Low": 11418.24,
+        "Close": 11581.02,
+        "Volume": 27512014
+      },
+      {
+        "Date": "2024-07-21",
+        "Open": 11049.2,
+        "High": 11248.1,
+        "Low": 10890.37,
+        "Close": 11025.76,
+        "Volume": 3536340
+      },
+      {
+        "Date": "2024-08-20",
+        "Open": 10511.58,
+        "High": 10638.19,
+        "Low": 10314.61,
+        "Close": 10371.6,
+        "Volume": 11384580
+      },
+      {
+        "Date": "2024-09-19",
+        "Open": 11252.58,
+        "High": 11316.96,
+        "Low": 11086.7,
+        "Close": 11116.23,
+        "Volume": 48916011
+      },
+      {
+        "Date": "2024-10-19",
+        "Open": 11590.41,
+        "High": 11725.42,
+        "Low": 11584.65,
+        "Close": 11586.76,
+        "Volume": 20813372
+      },
+      {
+        "Date": "2024-11-18",
+        "Open": 11134.53,
+        "High": 11415.27,
+        "Low": 10967.91,
+        "Close": 11217.24,
+        "Volume": 18440633
+      },
+      {
+        "Date": "2024-12-18",
+        "Open": 11141.2,
+        "High": 11288.99,
+        "Low": 10930.04,
+        "Close": 10998.03,
+        "Volume": 4583022
+      },
+      {
+        "Date": "2025-01-17",
+        "Open": 10724.49,
+        "High": 10947.28,
+        "Low": 10677.37,
+        "Close": 10760.53,
+        "Volume": 45515744
+      },
+      {
+        "Date": "2025-02-16",
+        "Open": 9668.68,
+        "High": 9761.47,
+        "Low": 9597.61,
+        "Close": 9628.87,
+        "Volume": 3989222
+      },
+      {
+        "Date": "2025-03-18",
+        "Open": 8507.75,
+        "High": 8519.57,
+        "Low": 8406.31,
+        "Close": 8472.44,
+        "Volume": 5974445
+      },
+      {
+        "Date": "2025-04-17",
+        "Open": 8729.41,
+        "High": 8854.83,
+        "Low": 8686.48,
+        "Close": 8712.68,
+        "Volume": 20348512
+      },
+      {
+        "Date": "2025-05-17",
+        "Open": 8711.72,
+        "High": 8773.4,
+        "Low": 8416.63,
+        "Close": 8553.87,
+        "Volume": 34621767
+      },
+      {
+        "Date": "2025-06-16",
+        "Open": 7917.43,
+        "High": 8019.39,
+        "Low": 7789.89,
+        "Close": 7969.87,
+        "Volume": 19073184
+      }
+    ]
+  },
+  "lastUpdate": "2025-06-20 13:10:40 WIB"
+}

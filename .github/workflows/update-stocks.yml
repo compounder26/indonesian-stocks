@@ -2,45 +2,40 @@ name: Update Stock Data
 
 on:
   schedule:
-    # Run at 9 AM and 3 PM Jakarta time (UTC+7)
-    - cron: '0 2,8 * * *'
+    # Run every hour during IDX trading hours (Mon-Fri 9:00-16:00 WIB)
+    # WIB is UTC+7, so 9:00-16:00 WIB is 02:00-09:00 UTC
+    - cron: '0 2-9 * * 1-5'
   workflow_dispatch: # Allow manual trigger
 
 jobs:
-  update-stocks:
+  update-data:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
+      
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
-    
+        python-version: '3.x'
+        
     - name: Install dependencies
+      run:  < /dev/null | 
+        python -m pip install --upgrade pip
+        pip install yfinance pandas numpy pytz requests beautifulsoup4
+        
+    - name: Run enhanced scraper
       run: |
-        pip install -r requirements.txt
-    
-    - name: Run stock scraper
-      run: |
-        cd scripts
-        python scraper.py
-    
+        python scripts/enhanced_scraper.py || python scripts/scraper.py
+        
     - name: Generate static HTML
       run: |
         python scripts/generate_static.py
-    
-    - name: Commit and push changes
+        
+    - name: Commit and push if changed
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add static/data/stocks.json
-        git add index.html
-        git diff --staged --quiet || git commit -m "Update stock data - $(date +'%Y-%m-%d %H:%M:%S')"
-        git push
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git add -A
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update stock data - $(date +'%Y-%m-%d %H:%M:%S')" && git push)

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDX Terminal - Indonesian Stock Market Data</title>
+    <link rel="stylesheet" href="static/css/bloomberg-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="logo">
+                <span class="logo-text">IDX</span>
+                <span class="logo-sub">TERMINAL</span>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-view="market">MARKET</button>
+                <button class="nav-tab" data-view="screener">SCREENER</button>
+                <button class="nav-tab" data-view="watchlist">WATCHLIST</button>
+                <button class="nav-tab" data-view="portfolio">PORTFOLIO</button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="stockSearch" placeholder="Search stocks..." autocomplete="off">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            <div class="market-status">
+                <span class="status-indicator"></span>
+                <span class="status-text">Market Closed</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <div class="sidebar-section">
+                <h3>INDICES</h3>
+                <div class="index-item">
+                    <div class="index-name">JCI</div>
+                    <div class="index-value">7,456.23</div>
+                    <div class="index-change positive">+45.67 (+0.62%)</div>
+                </div>
+                <div class="index-item">
+                    <div class="index-name">LQ45</div>
+                    <div class="index-value">1,023.45</div>
+                    <div class="index-change negative">-12.34 (-1.19%)</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>SECTORS</h3>
+                <div id="sectorList" class="sector-list">
+                    <!-- Sectors will be populated dynamically -->
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>MARKET MOVERS</h3>
+                <div class="movers-tabs">
+                    <button class="mover-tab active" data-type="gainers">Gainers</button>
+                    <button class="mover-tab" data-type="losers">Losers</button>
+                    <button class="mover-tab" data-type="active">Most Active</button>
+                </div>
+                <div id="moversList" class="movers-list">
+                    <!-- Movers will be populated dynamically -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <main class="center-content">
+            <!-- Market View -->
+            <div id="marketView" class="view-container active">
+                <div class="data-grid-header">
+                    <h2>Indonesian Stocks</h2>
+                    <div class="grid-controls">
+                        <button class="grid-btn" id="refreshData">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                        <button class="grid-btn" id="exportData">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                        <select id="gridDensity" class="grid-select">
+                            <option value="normal">Normal</option>
+                            <option value="compact">Compact</option>
+                            <option value="comfortable">Comfortable</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="stocksGrid" class="data-grid">
+                    <table id="stocksTable">
+                        <thead>
+                            <tr>
+                                <th data-sort="symbol">Symbol <i class="fas fa-sort"></i></th>
+                                <th data-sort="name">Name <i class="fas fa-sort"></i></th>
+                                <th data-sort="price" class="numeric">Price <i class="fas fa-sort"></i></th>
+                                <th data-sort="change" class="numeric">Change <i class="fas fa-sort"></i></th>
+                                <th data-sort="changePercent" class="numeric">Change % <i class="fas fa-sort"></i></th>
+                                <th data-sort="volume" class="numeric">Volume <i class="fas fa-sort"></i></th>
+                                <th data-sort="marketCap" class="numeric">Market Cap <i class="fas fa-sort"></i></th>
+                                <th data-sort="pe" class="numeric">P/E <i class="fas fa-sort"></i></th>
+                                <th data-sort="sector">Sector <i class="fas fa-sort"></i></th>
+                                <th class="actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stocksTableBody">
+                            <!-- Stock rows will be populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Screener View -->
+            <div id="screenerView" class="view-container">
+                <div class="screener-header">
+                    <h2>Stock Screener</h2>
+                    <button class="btn-primary" id="runScreener">
+                        <i class="fas fa-filter"></i> Apply Filters
+                    </button>
+                </div>
+                
+                <div class="screener-filters">
+                    <div class="filter-section">
+                        <h3>Fundamentals</h3>
+                        <div class="filter-row">
+                            <label>P/E Ratio</label>
+                            <input type="number" id="peMin" placeholder="Min">
+                            <span>-</span>
+                            <input type="number" id="peMax" placeholder="Max">
+                        </div>
+                        <div class="filter-row">
+                            <label>P/B Ratio</label>
+                            <input type="number" id="pbMin" placeholder="Min">
+                            <span>-</span>
+                            <input type="number" id="pbMax" placeholder="Max">
+                        </div>
+                        <div class="filter-row">
+                            <label>Market Cap (B)</label>
+                            <input type="number" id="mcapMin" placeholder="Min">
+                            <span>-</span>
+                            <input type="number" id="mcapMax" placeholder="Max">
+                        </div>
+                        <div class="filter-row">
+                            <label>Dividend Yield %</label>
+                            <input type="number" id="divMin" placeholder="Min">
+                            <span>-</span>
+                            <input type="number" id="divMax" placeholder="Max">
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Performance</h3>
+                        <div class="filter-row">
+                            <label>1D Change %</label>
+                            <input type="number" id="perf1dMin" placeholder="Min">
+                            <span>-</span>
+                            <input type="number" id="perf1dMax" placeholder="Max">
+                        </div>
+                        <div class="filter-row">
+                            <label>1M Change %</label>
+                            <input type="number" id="perf1mMin" placeholder="Min">
+                            <span>-</span>
+                            <input type="number" id="perf1mMax" placeholder="Max">
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Sectors</h3>
+                        <div id="sectorFilters" class="sector-filters">
+                            <!-- Sector checkboxes will be populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="screenerResults" class="screener-results">
+                    <!-- Screener results will be displayed here -->
+                </div>
+            </div>
+
+            <!-- Stock Detail Modal -->
+            <div id="stockDetailModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="modalStockName"></h2>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="detail-tabs">
+                            <button class="detail-tab active" data-tab="overview">Overview</button>
+                            <button class="detail-tab" data-tab="chart">Chart</button>
+                            <button class="detail-tab" data-tab="financials">Financials</button>
+                            <button class="detail-tab" data-tab="technicals">Technicals</button>
+                        </div>
+                        
+                        <div id="detailContent" class="detail-content">
+                            <!-- Detail content will be populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="sidebar-section">
+                <h3>MARKET STATS</h3>
+                <div class="stat-item">
+                    <span class="stat-label">Advances</span>
+                    <span class="stat-value positive" id="advancesCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Declines</span>
+                    <span class="stat-value negative" id="declinesCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Unchanged</span>
+                    <span class="stat-value" id="unchangedCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Volume</span>
+                    <span class="stat-value" id="totalVolume">0</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>DATA QUALITY</h3>
+                <div class="quality-meter">
+                    <div class="quality-bar" id="qualityBar"></div>
+                </div>
+                <div class="quality-text">
+                    <span id="qualityPercent">0%</span> Real-time Data
+                </div>
+                <div class="update-time">
+                    Last Update: <span id="lastUpdateTime">-</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>QUICK LINKS</h3>
+                <a href="#" class="quick-link"><i class="fas fa-chart-line"></i> Technical Analysis</a>
+                <a href="#" class="quick-link"><i class="fas fa-newspaper"></i> Market News</a>
+                <a href="#" class="quick-link"><i class="fas fa-calendar"></i> Economic Calendar</a>
+                <a href="#" class="quick-link"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading market data...</div>
+    </div>
+
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="static/js/data-manager.js"></script>
+    <script src="static/js/bloomberg-app.js"></script>
+</body>
+</html>
